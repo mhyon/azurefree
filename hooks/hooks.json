@@ -1,0 +1,30 @@
+{
+  "description": "azure-free: pause az commands that would cost money or delete data, and load the project's Azure state at session start",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/free-tier-guard.mjs"],
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/session-context.mjs"],
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

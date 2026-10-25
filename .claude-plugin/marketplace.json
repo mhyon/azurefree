@@ -1,0 +1,17 @@
+{
+  "name": "azurefree",
+  "owner": {
+    "name": "Matt Hyon",
+    "url": "https://github.com/mhyon"
+  },
+  "description": "Guided Azure free-tier tooling for Claude Code.",
+  "plugins": [
+    {
+      "name": "azure-free",
+      "source": "./",
+      "description": "Guided path for creators to host a web app and a database on Azure's free tiers. Defaults to the always-free Azure SQL Database offer for apps that store data.",
+      "version": "0.1.0",
+      "category": "cloud"
+    }
+  ]
+}
